@@ -1,0 +1,139 @@
+.projectsContainer {
+  background-color: gray; //#020c1b;
+  // width: 50vw;
+
+  // box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  padding: 1rem;
+  margin-bottom: 3rem;
+  // margin-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+.projectHeader {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  // border: 2px solid red;
+  justify-content: space-between;
+  z-index: 3;
+  // margin: 0 0 0.5rem 0;
+
+  .projectTitle {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    .projectBusiness {
+      margin: 0 0 0 1rem;
+      span {
+        font-size: x-small;
+      }
+      .projectCompany {
+        &:before {
+          content: "@";
+          color: greenyellow;
+          padding: 0 0 0 0.5rem;
+        }
+      }
+      .projectRole {
+        &:before {
+          content: "|";
+          color: red;
+          padding: 0 0.2rem 0 0.2rem;
+        }
+      }
+    }
+  }
+  .projectLinks {
+    // background-color: pink;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    .react-icons {
+      vertical-align: middle;
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+}
+.projectDetails {
+  // background-color: navajowhite;
+  width: 100%;
+  z-index: 2;
+  // margin: 0 0 1rem 0;
+
+  .projectDescription {
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    color: #fff;
+    margin: 0 0 0 1rem;
+    width: 80%;
+    z-index: -1;
+    font-size: small;
+    text-align: right;
+    padding: 5px;
+    p {
+      text-align: right;
+    }
+  }
+}
+.projectImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 15vw;
+  div {
+    // height: 300px;
+    background-color: darkgray;
+    // border: 2px solid red;
+    width: 200px;
+    height: 200px;
+    z-index: 0;
+    // float: right;
+    position: absolute;
+    // top: 0px;
+    top: -1rem;
+    right: 1rem;
+    // bottom: 1rem;
+    display: inline-block;
+  }
+}
+.projectStack {
+  background-color: chocolate;
+  position: absolute;
+  // width: 90%;
+  bottom: -0.5rem;
+  right: 1rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.25rem;
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: xx-small;
+    list-style: none;
+    padding: 0 5px;
+    // -webkit-column-count: 3;
+    // -webkit-column-gap: 20px;
+    // -moz-column-count: 3;
+    // -moz-column-gap: 20px;
+    // column-count: 3;
+    // column-gap: 20px;
+    li {
+      // display: flex;
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      column-break-inside: avoid;
+      &:before {
+        content: "≫";
+        padding: 0 0 0 1px;
+      }
+    }
+  }
+}
