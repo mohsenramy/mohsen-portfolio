@@ -1,19 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./TabsPanel.scss";
+import data from "../../data/data.json";
+import moment from "moment";
+import { light } from "@mui/material/styles/createPalette";
 
 type Props = {};
 
 const TabsPanel = (props: Props) => {
+  const [selectedJobIndex, setSelectedJobIndex] = useState(0);
+  const [companies, setCompanies] = useState<string[]>([]);
+
+  useEffect(() => {
+    setCompanies(data.workExperience.map((job) => job.companyName));
+    console.log(companies);
+    return () => {};
+  }, []);
+
+  const onSelectJobHandler = (jobId: string) => {
+    const selected = data.workExperience.findIndex((job) => job.id === jobId);
+    setSelectedJobIndex(selected);
+  };
+
+  const CompaniesList = () => {
+    return (
+      <ul>
+        {data.workExperience.map((job, index) => {
+          let className = "";
+          if (index === 0) {
+            className = "active";
+            // onSelectJobHandler(job.id);
+          }
+
+          return (
+            <li
+              key={job.id}
+              className={selectedJobIndex === index ? "active" : ""}
+              onClick={(e) => setSelectedJobIndex(index)}
+            >
+              {job.companyName}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   return (
     <div className="workTabsPanelContainer">
       <div className="tabsList">
-        <ul>
-          <li>Comp1</li>
-          <li>Comp2</li>
-          <li>Comp3</li>
-          <li>Comp4</li>
-          <li>Comp5</li>
-        </ul>
+        <CompaniesList />
         {/* <button type="button">JobTitle01</button>
         <button type="button">JobTitle01</button>
         <button type="button">JobTitle01</button>
@@ -21,14 +56,26 @@ const TabsPanel = (props: Props) => {
       </div>
       <div className="detailsPanel">
         <div className="detailsHeader">
-          <h3>JobTitle</h3>
+          <h3>{data.workExperience[selectedJobIndex].position}</h3>
           <div className="jobParameters">
-            <div className="location">Location</div>
-            <div className="separator">
-              <hr />
+            <div className="company">
+              {data.workExperience[selectedJobIndex].companyName}
             </div>
+            <div className="separator"></div>
+            <div className="location">
+              {data.workExperience[selectedJobIndex].location}
+            </div>
+            <div className="separator">{/* <hr /> */}</div>
             {/* <span></span> */}
-            <div className="interval">from ~ to</div>
+            <div className="interval">
+              {moment(data.workExperience[selectedJobIndex].from).format(
+                "MM-YYYY"
+              )}{" "}
+              ~{" "}
+              {moment(data.workExperience[selectedJobIndex].to).format(
+                "MM-YYYY"
+              )}
+            </div>
           </div>
         </div>
         <div className="jobDescription">
@@ -39,7 +86,12 @@ const TabsPanel = (props: Props) => {
             cumque tempore dolorum.
           </p>
           <ul>
-            <li>
+            {data.workExperience[selectedJobIndex].jobDescription.map(
+              (item) => (
+                <li>{item}</li>
+              )
+            )}
+            {/* <li>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
               ipsum.
             </li>
@@ -56,21 +108,14 @@ const TabsPanel = (props: Props) => {
             <li>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Accusantium, incidunt provident?
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="jobTechStack">
           <ul>
-            <li>Tech01</li>
-            <li>Tech02</li>
-            <li>Tech03</li>
-            <li>Tech04: Lorem, ipsum.</li>
-            <li>Tech05</li>
-            <li>Tech06</li>
-            <li>Tech07</li>
-            <li>Tech08</li>
-            <li>Tech09</li>
-            <li>Tech10</li>
+            {data.workExperience[selectedJobIndex].techStack.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         </div>
       </div>

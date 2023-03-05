@@ -1,5 +1,5 @@
 import React from "react";
-import Calendly from "../Components/Calendly";
+import Calendly from "../components/Calendly";
 
 type Props = {};
 

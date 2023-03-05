@@ -1,13 +1,13 @@
 import { FaGithubSquare } from "react-icons/fa";
 import { VscLinkExternal, VscGithub } from "react-icons/vsc";
-import FeaturedProject from "../Components/Projects/FeaturedProject";
-import OtherProject from "../Components/Projects/OtherProject";
+import FeaturedProject from "../components/Projects/FeaturedProject";
+import OtherProject from "../components/Projects/OtherProject";
 type Props = {};
 
 const Projects = (props: Props) => {
   return (
     <section id="projects">
-      <h2>Projects</h2>
+      <h1>Projects</h1>
       <div className="projectsListContainer">
         <div className="featuredProjectsList">
           <FeaturedProject />

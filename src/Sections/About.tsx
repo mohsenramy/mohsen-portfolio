@@ -5,7 +5,7 @@ type Props = {};
 const About = (props: Props) => {
   return (
     <section id="about">
-      <h2>About</h2>
+      <h1>About</h1>
       <p>
         I am a full stack software engineer with 18 years of experience and a
         successful track record as a technical manager. My expertise lies in

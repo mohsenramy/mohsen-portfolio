@@ -1,5 +1,5 @@
 import React from "react";
-import TabsPanel from "../Components/TabsPanel/TabsPanel";
+import TabsPanel from "../components/TabsPanel/TabsPanel";
 
 type Props = {};
 

@@ -88,8 +88,25 @@ section {
   min-height: 100vh;
   // text-align: center;
   justify-content: center;
-  // align-items: center;
+  // align-items: start;
   padding: 60px 10vw;
+  h1 {
+    // background: #7c7b7b;
+    // position: absolute;
+    transform-origin: right;
+    display: inline-block;
+    transform: translate(-60vh, 0rem) rotate(-90deg);
+    margin: 2rem;
+    font-size: xx-large;
+    text-transform: capitalize;
+    // text
+    border-bottom: 1px solid #ccc;
+    width: 50vh;
+    // float: right;
+    // padding-bottom: 3px;
+    text-align: right;
+    line-height: 4rem;
+  }
 }
 
 .projectsListContainer {

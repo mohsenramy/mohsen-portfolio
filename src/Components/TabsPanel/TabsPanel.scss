@@ -1,17 +1,58 @@
 .workTabsPanelContainer {
-  background-color: rgba($color: #000000, $alpha: 0.5);
+  background-color: rgba($color: #000000, $alpha: 0.1);
   display: grid;
   grid-template-columns: 2fr 8fr;
-  column-gap: 10px;
+  // column-gap: 10px;
+  color: #ffffff;
+  height: 70vh;
+  padding: 1rem;
 
   .tabsList {
     display: flex;
     flex-direction: column;
-    padding: 1vw;
+    // padding: 1vw 0 1vw 1vw;
+    // z-index: 2;
+    ul {
+      li {
+        // display: block;
+        cursor: pointer;
+        padding: 1rem;
+        margin: 1px 0 5px 0; //5px 5px 5px 5px;
+        font-size: small;
+        background-color: #444646;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: transform ease 30ms;
+        &:hover {
+          color: lawngreen;
+          box-shadow: -3px 3px 3px 0px rgba(2, 12, 27, 0.7);
+          transform: translate(0, -1px);
+        }
+      }
+      .active {
+        background-color: #12202c;
+        box-shadow: -3px 3px 3px -3px rgba(2, 12, 27, 0.7);
+        transform: translate(0, -1px);
+        color: lawngreen;
+      }
+    }
   }
   .detailsPanel {
+    color: #fff;
+    // box-shadow: 0px 3px 3px 0px rgba(2, 12, 27, 0.7);
+    //top-Shadow
+    box-shadow: 0 -5px 3px -3px #00000030,
+      //right-shadow
+      5px 0 3px -3px #00000030,
+      //bottom-shadow
+      0 5px 3px -3px #00000030,
+      //left-shadow
+      -5px 0 3px -3px #00000030;
     padding: 1vw;
-    border: solid 2px red;
+    margin-left: 0px;
+    background-color: #12202c;
+    // border: solid 2px red;
     .detailsHeader {
       margin-bottom: 10px;
       .jobParameters {
@@ -20,11 +61,12 @@
         // display: -webkit-box; /* Safari and Chrome */
         // display: -ms-flexbox; /* Internet Explorer 10 */
         // display: box;
-        width: 50%;
+        // width: %;
         display: flex;
         // flex-direction: column;
         // justify-content: space-between;
         align-items: center;
+        font-size: x-small;
         // width: fit-content;
         // .location .interval{
 
@@ -49,12 +91,28 @@
           // // -ms-flex: 9; /* Internet Explorer 10 */
           // box-flex: 9;
           // // flex: 9;
-          flex-grow: 0.8;
-        }
-        hr {
-          border: 1px dotted red;
+          flex-grow: 1;
+          border-style: dotted none none none;
+          border-color: lawngreen;
+          border-width: 1px;
+          // border: 1px dotted red;
           margin-left: 10px;
           margin-right: 10px;
+          transform: translate(0, 0.125rem);
+        }
+        .company {
+          // margin: 0 1rem;
+          font-size: medium;
+          font-weight: 600;
+        }
+        hr {
+          border-style: dotted none none none;
+          border-color: red;
+          border-width: 1px;
+          // border: 1px dotted red;
+          margin-left: 10px;
+          margin-right: 10px;
+          transform: translate(0, 0.125rem);
           // display: inline-block;
           // width: 10px;
           // position: absolute;
@@ -70,30 +128,42 @@
     .jobDescription {
       .jobDescriptionBrief {
         padding: 5px;
-        border: solid 2px red;
+        // border: solid 2px red;
         margin-bottom: 0.5rem;
       }
       ul {
-        padding: 5px;
+        // list-style-type: "⨳ ";
+        list-style-position: inside;
+
+        padding: 5px 1rem;
         li {
           padding: 0 1em 0 0;
+          text-indent: -1rem;
           &::before {
             content: "⨳";
             font-size: x-small;
-            padding: 0.5rem;
-            color: red;
+            padding: 0.5rem 1rem;
+            color: lawngreen;
+
+            // display: inline-block; /* Needed to add space between the bullet and the text */
+            // width: 1rem; /* Also needed for space (tweak if needed) */
+            // margin-left: -1rem; /* Also needed for space (tweak if needed) */
+            // text-indent: -1rem;
           }
         }
       }
     }
     .jobTechStack {
       width: 100%;
-      background-color: rgba($color: #000000, $alpha: 0.1);
+      // background-color: rgba($color: #7b8fa1, $alpha: 0.5);
+      margin: 2rem 0;
       display: flex;
       align-items: center;
       justify-content: end;
-      font-size: 0.5rem;
-      padding: 5px;
+      font-size: x-small;
+      font-weight: 100;
+      padding: 0.5rem;
+      border: 1px solid rgba(125, 250, 0, 0.5);
       ul {
         // background-color: rgba($color: #ffffff, $alpha: 0.2);
         width: 100%;
@@ -114,14 +184,16 @@
         row-gap: 0.1rem;
         padding: 0;
         li {
+          // max-width: fit-content;
+          color: lawngreen;
           display: flex;
           justify-content: center;
           align-items: center;
           // border-bottom: 1px solid #000;
           // border-left: 1px solid #000;
           // background-color: burlywood;
-          background-color: rgba($color: #000000, $alpha: 0.1);
-          padding: 0.1rem;
+          background-color: rgba($color: #789fbd, $alpha: 0.3);
+          padding: 0.2rem;
           // white-space: nowrap;
           // display: inline-block;
           // &:not(:first-child) {
