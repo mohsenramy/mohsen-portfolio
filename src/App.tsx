@@ -1,12 +1,12 @@
 import HeaderMUI from "./sections/HeaderMUI";
-import Footer from "./sections/Footer";
+import Footer from "./components/Footer";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Work from "./sections/Work";
 import Contact from "./sections/Contact";
 import { Toolbar } from "@mui/material";
 import "./App.scss";
-import Header from "./sections/Header";
+import Header from "./components/Header";
 import Projects from "./sections/Projects";
 
 function App() {

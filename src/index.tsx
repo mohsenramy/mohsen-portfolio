@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "./index.scss";
+import "./styles/main.scss";
 // import "./fonts/JetBrainsMono-Medium.ttf";
 
 const container = document.getElementById("root")!;

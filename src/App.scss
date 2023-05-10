@@ -1,21 +1,21 @@
-$navHeight: 64px;
-$viewPortHeight: calc(100vh - $navHeight);
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "jbm-regular";
-  box-sizing: border-box;
-}
-ul {
-  list-style: none;
-}
-.react-icons {
-  vertical-align: middle;
-}
-html {
-  scroll-behavior: smooth;
-  // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+// $navHeight: 64px;
+// $viewPortHeight: calc(100vh - $navHeight);
+// * {
+//   margin: 0;
+//   padding: 0;
+//   font-family: "jbm-regular";
+//   box-sizing: border-box;
+// }
+// ul {
+//   list-style: none;
+// }
+// .react-icons {
+//   vertical-align: middle;
+// }
+// html {
+//   scroll-behavior: smooth;
+//   // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+// }
 
 .appContainer {
   width: 100%;
@@ -23,62 +23,6 @@ html {
   /* CSS Smooth Scroll */
   // overflow-y: scroll;
   // scroll-behavior: smooth;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: 40px;
-  background: green; //rgba(0, 0, 0, 0.7);
-
-  .mohsen {
-    display: flex;
-    flex-grow: 3;
-    background-color: aquamarine;
-    margin: 0 1rem;
-  }
-  .navigation {
-    display: flex;
-    flex-grow: 3;
-    justify-content: flex-end;
-  }
-  ul {
-    display: flex;
-    // flex-grow: 1;
-    align-items: center;
-    justify-content: flex-end;
-    list-style: none;
-    // width: 100%;
-    background-color: aqua;
-    margin: 0 1rem;
-
-    li {
-      margin: 0.25rem;
-      padding: 0.25rem;
-      background-color: burlywood;
-      transition: 0.5s;
-      a {
-        text-decoration: none;
-        // text-transform: uppercase;
-        color: #f4f4f4;
-        transition: 1.7s;
-      }
-      a:active {
-        color: green;
-      }
-    }
-    li:hover {
-      background-color: skyblue;
-      a {
-        color: black;
-      }
-    }
-  }
 }
 
 section {
@@ -145,8 +89,25 @@ section {
 }
 
 section#home {
-  // background: url("https://source.unsplash.com/bZZp1PmHI0E/1600x900") no-repeat center center/cover;
-  background-color: cadetblue;
+  background: url("./styles/images/tech-bg-1280x835.jpg") no-repeat center
+    center/cover;
+  // background-color: cadetblue;
+  position: relative;
+  z-index: -1;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+  }
+  .homeContainer {
+    z-index: 1;
+    // background-color: aqua;
+  }
 }
 
 section#about {

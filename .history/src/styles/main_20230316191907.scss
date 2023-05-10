@@ -1,0 +1,23 @@
+@import "./abstract/reset";
+@import "./abstract/tokens";
+// @import "./abstract/fonts";
+@import "./abstract/typography";
+@import url("./theme/theme.dark.scss") (prefers-color-scheme: dark);
+@import url("./theme/theme.light.scss") (prefers-color-scheme: light);
+// @import "./abstract/colors";
+
+.react-icons {
+  vertical-align: middle;
+}
+html {
+  scroll-behavior: smooth;
+  // font-family: "jbm-regular";
+  @extend .body-large;
+  // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;;
+}
+
+.small {
+  // @extend .label-small;
+  @extend .on-secondary-container-text;
+  // color: #5ffbd6; //var(--md-sys-color-on-seconvscode debugdary-container);;;;;
+}

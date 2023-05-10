@@ -5,14 +5,22 @@ type Props = {};
 const Home = (props: Props) => {
   return (
     <section id="home">
-      <span>Hi, my name is</span>
-      <h2>
-        Abdelmohsen AG <span>aka</span> <strong>MOHSEN!</strong>
-      </h2>
-      <h2>I'm a full stack developer</h2>
-      <div className="technologyStack">
-        <span>NodeJS</span>|<span>ExpressJS</span>|<span>React</span>|
-        <span>MongoDb</span>|<span>ReactNative</span>
+      <div className="homeContainer">
+        <span className="small">Hi, my name is</span>
+        <div className="display-small">
+          Abdelmohsen AG <span> ...aka</span>
+        </div>
+        <div className="display-large">
+          <strong>MOHSEN!</strong>
+        </div>
+        <span>Full stack developer Web/Mobile. Software is my Craft</span>
+        <ul className="technologyStack">
+          <li>NodeJS</li>
+          <li>ExpressJS</li>
+          <li>React</li>
+          <li>MongoDb</li>
+          <li>ReactNative</li>
+        </ul>
       </div>
     </section>
   );
